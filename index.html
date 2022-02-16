@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8"/>
+    <title>
+    </title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style type="text/css">
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        .svg{
+          margin: 20px;
+        }
+
+        .axis path,
+        .axis line{
+            fill: none;
+            stroke: rgb(74, 61, 187);
+            shape-rendering: crispEdges;
+        }
+        .axis text{
+            font-family: sans-serif;
+            font-size: 11px; 
+        }
+        .display_block{
+            position: absolute;
+            display: inline-block; 
+            margin: 20px;
+            height: 600px;
+            width: 400px;
+            padding: 0px;
+            text-align: center;
+        }
+        .display_title{
+            width: 100%;
+            font: 24px sans-serif;
+        }
+        .display_button button{
+            margin: 10px;
+            font-size: 16px;
+            width: 40%;
+            background-color: #dfb08a;
+        }
+        .choose_button button{
+            margin: 10px;
+            font-size: 13px;
+            width: 30%;
+            background-color: #8bbe8a;
+        }
+        .toggle_button button{
+            margin: 10px;
+            shape-outside: circle();
+            font-size: 13px;
+            width: 30%;
+            background-color: #be8a97;
+        }
+
+    </style>
+</head> 
+
+<body>
+    <!-- Pre-process CSV data into a variable in JavaScript file -->
+    <script src="import_csv.js"></script>
+
+    <script type="text/javascript">
+        // Build a svg element
+        var svg_w = 700, svg_h = 600;
+        var svg = d3.select("body").append("svg")
+        .attr("class", "svg")
+        .attr("width", svg_w)
+        .attr("height", svg_h);
+
+        var rects, xAxis, paths, binData, IMDB, bin_disp;
+        
+        // Find max and min value
+        var max = {
+            year: d3.max(IMDB, function(d){ return d["year"]; }),
+            duration: d3.max(IMDB, function(d){ return d["duration"]; }),
+            rating: d3.max(IMDB, function(d){ return d["rating"]; }),
+            votes: d3.max(IMDB, function(d){ return d["votes"]; })
+        };
+        var min = {
+            year: d3.min(IMDB, function(d){ return d["year"]; }),
+            duration: d3.min(IMDB, function(d){ return d["duration"]; }),
+            rating: d3.min(IMDB, function(d){ return d["rarting"]; }),
+            votes: d3.min(IMDB, function(d){ return d["votes"]; })
+        };
+
+        // Initializa a bar chart
+        buildChart(0, IMDB, 10, "rating");
+
+        // Create a display for bin size
+        bin_disp = svg.append("text")
+            .text(binData.bin_num)
+            .attr("x", 0.9 * svg_w)
+            .attr("y", 0.1 * svg_h)
+            .style("text-anchor", "middle")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "28px")
+            .attr("border", "1px solid")
+            .style("fill", "black");
+
+        // Build chart
+        function buildChart(mode, dataset, bin_number, feature){
+
+            // Claer all charts
+            svg.selectAll("#bar_label").remove();
+            svg.selectAll("#bar_chart").remove();
+            svg.selectAll("#bar_range").remove();
+            svg.selectAll("#bar_y_Axis").remove();
+            svg.selectAll("text").remove();
+            svg.selectAll("#hist_yaxis").remove();
+            svg.selectAll("#hist_xaxis").remove();
+            svg.selectAll("#hist_bar").remove();
+            svg.selectAll("axis").remove();
+            svg.selectAll("dot").remove();
+            svg.selectAll("#scatter_xaxis").remove();
+            svg.selectAll("#scatter_yaxis").remove();
+            svg.selectAll("#dots").remove();
+            svg.selectAll(".axis-grid").remove();
+
+            binData = buildBins(mode, dataset, bin_number, feature);
+            if(mode == 0)
+                buildBarChart(0, binData, feature);
+            else if(mode == 1)
+                buildBarChart(1, binData, feature);
+            else
+                console.log("ERROR: Mode is undefined.");
+        }
+         // Seperate data into different bins
+        function buildBins(mode, dataset, bin_number = 20, feature){
+
+            var index = 0, binDataSet = [], binDataCount = [], scale, lowerBound = [], upperBound = [], binWidth = 0;
+            for (var i = 0; i < bin_number; i++) {
+            binDataSet[i] = [];
+            binDataCount[i] = 0;
+            lowerBound[i] = 0;
+            upperBound[i] = 0;
+            };
+            switch(feature){
+
+                case "year":
+                    binWidth = Math.floor((max.year - min.year) / bin_number * 100) / 100;
+                    lowerBound[0] = min.year;
+                    upperBound[bin_number-1] = max.year;
+                    for (var i = 1; i < bin_number; i++) {
+                        lowerBound[i] = lowerBound[i-1] + binWidth;
+                        upperBound[i-1] = lowerBound[i];
+                    };
+                    for (var i = 0; i < dataset.length; i++) {
+                        dif = dataset[i]["year"] - 1947;
+                        index = Math.floor(dif/binWidth);
+                        if(index == bin_number) index--;
+                        binDataSet.push([dataset[i]["year"], dataset[i]["name"]]);
+                        binDataCount[index]++;
+                    }
+                    binDataSet.splice(0,10);
+                    break;
+
+                case "duration":
+                    binWidth = Math.floor((max.duration - min.duration) / bin_number * 100) / 100;
+                    lowerBound[0] = min.duration;
+                    upperBound[bin_number-1] = max.duration;
+                    for (var i = 1; i < bin_number; i++) {
+                        lowerBound[i] = lowerBound[i-1] + binWidth;
+                        upperBound[i-1] = lowerBound[i];
+                    };
+                    for (var i = 0; i < dataset.length; i++) {
+                        index = (dataset[i]["duration"] - min.duration) / (max.duration - min.duration);
+                        index = Math.floor((index * bin_number));
+                        if(index == bin_number) index--;
+                        binDataSet.push([dataset[i]["duration"], dataset[i]["name"]]);
+                        binDataCount[index]++;
+                    }
+                    binDataSet.splice(0,10);
+                    break;
+
+                case "rating":
+                    binWidth = Math.floor((9.3 - 8.5) / bin_number * 100) / 100;
+                    lowerBound[0] = 8.5;
+                    upperBound[bin_number-1] = 9.3;
+                    for (var i = 1; i < bin_number; i++) {
+                        lowerBound[i] = lowerBound[i-1] + binWidth;
+                        upperBound[i-1] = lowerBound[i];
+                    };
+                    for (var i = 0; i < dataset.length; i++) {
+                        index = (dataset[i]["rating"] - 8.5) / (9.3 - 8.5);
+                        index = Math.floor((index * bin_number));
+                        if(index == bin_number) index--;
+                        binDataSet.push([dataset[i]["rating"], dataset[i]["name"]]);
+                        binDataCount[index]++;
+                    }
+                    binDataSet.splice(0,10);
+                    break;
+
+                case "votes":
+                    binWidth = Math.floor((max.votes - min.votes) / bin_number * 100) / 100;
+                    lowerBound[0] = min.votes;
+                    upperBound[bin_number-1] = max.votes;
+                    for (var i = 1; i < bin_number; i++) {
+                        lowerBound[i] = lowerBound[i-1] + binWidth;
+                        upperBound[i-1] = lowerBound[i];
+                    };
+                    for (var i = 0; i < dataset.length; i++) {
+                        index = (dataset[i]["votes"] - min.votes) / (max.votes - min.votes);
+                        index = Math.floor((index * bin_number));
+                        if(index == bin_number) index--;
+                        binDataSet.push([dataset[i]["votes"], dataset[i]["name"]]);
+                        binDataCount[index]++;
+                    }
+                    binDataSet.splice(0,10);
+                    break;
+                default:
+                    console.log("ERROR. feature: " + feature + " not exist");
+            }
+
+            // Randomly choose a color for each bar
+            var color = [];
+            for (var i = 0; i < bin_number; i++) {
+            color[i] = [
+                Math.floor(Math.random() * 180),
+                Math.floor(Math.random() * 180),
+                Math.floor(Math.random() * 180)
+            ];
+            }
+
+            // Build a scale
+            scale = d3.scaleLinear()
+            .domain([0, d3.max(binDataCount)])
+            .range([0, 0.75 * svg_h]);
+
+            return {
+            set: binDataSet, 
+            cnt: binDataCount,
+            chart_mode: mode, 
+            bin_num: bin_number,
+            feature: feature,
+            color: color,
+            scale: scale,
+            lowerBound: lowerBound,
+            upperBound: upperBound
+            };
+        }
+
+        // Build a bar chart
+        function buildBarChart(mode,dataset, feature){
+
+            // Create bars
+            var bar_w = (svg_w - 40) / dataset.bin_num;
+            var bar_padding = bar_w * 0.1;
+            rects = svg.append("g")
+                .selectAll("rect")
+                .data(dataset.cnt)
+                .enter()
+                .append("rect")
+                .attr("id", "bar_chart")
+                .attr("fill", function(d, i){
+                    return "rgba(" + dataset.color[i][0] + ", " + dataset.color[i][1] + ", " 
+                        + dataset.color[i][2] + ", 0.6)"; 
+                })
+                .attr("x", function(d, i){
+                    return 40 + (i * bar_w) + (bar_padding / 2);
+                })
+                .attr("y", function(d, i){
+                    return 0.9 * svg_h - dataset.scale(d);
+                })
+                .attr("height", function(d, i){
+                    return dataset.scale(d);
+                })
+                .attr("width", bar_w - bar_padding);
+
+            // Add Y-Axis
+            var yScale = d3.scaleLinear()
+                    .domain([0, Math.max(...dataset.cnt)])
+                    .range([0.9 * svg_h, 0.15 * svg_h]);
+
+            yAxis = d3.axisLeft().scale(yScale);
+
+            svg.append("g")
+                .attr("id","bar_y_Axis")
+                .attr("class", "axis")
+                .attr("transform", "translate(" + 40 + ", 0)")
+                .call(yAxis);
+                
+            
+            // X axis label:
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("y", 570)
+                .attr("x", 340)
+                .text(feature)
+            
+            // Y axis label:
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 10)
+                .attr("x", -300)
+                .text("count")
+
+            // Add mouse events
+            
+            // Event 1: Click
+            rects.on("click", function(d, i){
+                svg.selectAll("#bar_label").remove();
+                svg.selectAll("#bar_chart").remove();
+                buildChart(1, IMDB, dataset.bin_num, dataset.feature);
+            });
+
+            // Event 2: Mouse over
+            rects.on("mouseover", function(d, i){
+
+                d3.select(this)
+                    .transition().duration(500)
+                    .style("fill", "rgba(" + dataset.color[i][0] + ", " + dataset.color[i][1] + ", " 
+                        + dataset.color[i][2] + ", 1)")
+                    .attr("x", 40 + i * bar_w)
+                    .attr("width", bar_w)
+                    .attr("y", 0.9 * svg_h - (dataset.scale(d) * 1.1))
+                    .attr("height", dataset.scale(d) * 1.1);
+
+                // Add value above a bar
+                svg.select("g")
+                    .append("text")
+                    .text(d)
+                    .attr("id","bar_label")
+                    .attr("x", 40 + ((i+0.5) * bar_w))
+                    .attr("y", 0.88 * svg_h - (dataset.scale(d) * 1.1))
+                    .style("text-anchor", "middle")
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", "28px")
+                    .style("fill", "rgba(" + dataset.color[i][0] + ", " + dataset.color[i][1]
+                        + ", " + dataset.color[i][2] + ", 1)");
+
+                // Add range under a bar
+                svg.select("g")
+                    .append("text")
+                    .text("[" + Math.floor(dataset.lowerBound[i]) + "." 
+                        + (Math.floor(dataset.lowerBound[i] * 100) % 100) + ", "
+                        + Math.floor(dataset.upperBound[i]) + "." 
+                        + (Math.floor(dataset.upperBound[i] * 100) % 100) + "]")
+                    .attr("id","bar_range")
+                    .attr("x", 40 + (i + 0.5) * bar_w)
+                    .attr("y", 0.94 * svg_h)
+                    .style("text-anchor", "middle")
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", "16px")
+                    .style("fill", "rgba(" + dataset.color[i][0] + ", " + dataset.color[i][1]
+                        + ", " + dataset.color[i][2] + ", 1)");
+
+     
+            });
+
+            /** Event 3: Mouse out **/
+            rects.on("mouseout", function(d, i) { 
+                d3.select(this)
+                    .transition().duration(500)
+                    .style("fill", "rgba(" + dataset.color[i][0] + ", " + dataset.color[i][1] + ", " 
+                        + dataset.color[i][2] + ", 0.6)")
+                    .attr("x", 40 + i * bar_w + (bar_padding / 2))
+                    .attr("width", bar_w - bar_padding)
+                    .attr("y", 0.9 * svg_h - dataset.scale(d))
+                    .attr("height", dataset.scale(d));
+                
+                // Remove text label
+                d3.selectAll("#bar_label").remove();
+                d3.selectAll("#bar_range").remove();
+            });
+        }
+
+        //Build a histgram
+        function buildHistgram(dataset){
+            // Claer all charts
+            svg.selectAll("#bar_label").remove();
+            svg.selectAll("#bar_chart").remove();
+            svg.selectAll("#bar_range").remove();
+            svg.selectAll("#bar_y_Axis").remove();
+            svg.selectAll("text").remove();
+            svg.selectAll("#hist_yaxis").remove();
+            svg.selectAll("#hist_xaxis").remove();
+            svg.selectAll("#hist_bar").remove();
+            svg.selectAll("axis").remove();
+            svg.selectAll("dot").remove();
+            svg.selectAll("#scatter_xaxis").remove();
+            svg.selectAll("#scatter_yaxis").remove();
+            svg.selectAll("#dots").remove();
+            svg.selectAll(".axis-grid").remove();
+
+            const margin = {top: 50, right: 50, bottom: 50, left: 50};
+            const layer = {width: 600,height:400 };
+
+            //creat year array
+            var years_count = [];
+
+            var years = []
+
+            for (var i = 0; i < max.year-min.year; i++) {
+                years_count[i] = 0;
+            }
+
+
+            dataset.forEach(function(d, i) {
+                years_count[d.year-min.year]++;
+            });
+
+            var data = [{}];
+
+            for (var i = 0; i < years_count.length; i++) {
+                years[i] = min.year + i;
+                data[i] = {"year":years[i].toString(), "count": years_count[i]}
+            }
+
+            
+
+            svg.append("g")
+            .append("text")
+            .text("Bar Chart")
+            .style("stroke-width", "1.5px")
+            .style("fill", "black")
+            .style("alignment-baseline", "middle")
+            .attr("x", 260)
+            .attr("y", 30)
+            .attr("text-anchor", "left")
+            .attr("font-family", "Poppins")
+            .attr("font-size", "20px");
+
+            const background = d3.select('#chart')
+            .append('svg')
+            .style("background-color", "grey")
+            .attr("width", layer.width)
+            .attr("height", layer.height)
+            .attr("transform",      `translate(-${layer.width+margin.right},-${margin.top})`);
+
+
+            const years_data = data.map(function(object){
+            return object.year;// creating array of keys
+            });
+            const count_data = data.map(function(object){
+            return object.count;// creating array of values
+            });
+            const maxValue =  d3.max(count_data);// defining max value
+            const yScale = d3.scaleLinear() // projecting continuous data into the diagram
+            .domain([d3.max(data, function(d){ return d["count"]; }),0])
+            .range([0,400]);
+
+
+            const xScale = d3.scaleBand() // projecting discrete data into the diagram
+            .domain(years_data)
+            .range([0,500])
+            .paddingInner(0.05);
+            
+            const barColors = d3.scaleLinear() // projecting continuous data into the diagram
+            .domain([0,maxValue])
+            .range([d3.rgb(66,251,75),d3.rgb(200,50,150)])
+
+            const INNER_WIDTH  = layer.width - margin.left - margin.right;
+            const INNER_HEIGHT = layer.height - margin.top - margin.bottom;
+            const yAxis = d3.axisLeft(yScale).ticks(10);
+            const xAxis = d3.axisBottom(xScale).ticks(10);
+            const yAxisGrid = d3.axisLeft(yScale).tickSize(-INNER_WIDTH).tickFormat('').ticks(10)
+
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("y", 500)
+                .attr("x", 310)
+                .text("Year")
+
+            svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 10)
+            .attr("x", -220)
+            .text("count")
+
+            //Draw Y grid
+            svg.append('g')
+                .attr('class', 'y axis-grid')
+                .call(yAxisGrid)
+                .attr("transform", `translate(${margin.right},${margin.top})`)
+
+            const yCartesian = svg.append("g")
+            .call(yAxis)
+            .attr("id", "hist_yaxis")
+            .attr("transform", `translate(${margin.right},${margin.top})`);
+
+
+            const xCartesian = svg.append("g")
+            .attr("id", "hist_xaxis")
+            .call(xAxis)
+            .attr("transform", `translate(${margin.right},${layer.height+margin.top})`)
+            .selectAll("text")  
+            .style("font", "8px times")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-90)");
+
+
+
+            var g = svg.append("g")
+            .attr("transform", "translate(" + 50 + "," + 50 + ")");
+
+            g.selectAll(".bar") //created dynamic bars with our data using the SVG rectangle element.
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("id", "hist_bar")
+            .attr("class", "bar")
+            .attr("width", xScale.bandwidth())
+            .attr("height", function(d){
+                return layer.height - yScale(d.count)
+            })
+            .attr("x", function (d) {
+                return xScale(d.year)
+            })
+            .attr("y", function(d){
+                return yScale(d.count)
+            })
+            .style("fill", function(d){
+                return barColors(d.count)
+            })
+
+        }
+
+        function buildhor(dataset){
+        // Claer all charts
+            svg.selectAll("#bar_label").remove();
+            svg.selectAll("#bar_chart").remove();
+            svg.selectAll("#bar_range").remove();
+            svg.selectAll("#bar_y_Axis").remove();
+            svg.selectAll("text").remove();
+            svg.selectAll("#hist_yaxis").remove();
+            svg.selectAll("#hist_xaxis").remove();
+            svg.selectAll("#hist_bar").remove();
+            svg.selectAll("axis").remove();
+            svg.selectAll("dot").remove();
+            svg.selectAll("#scatter_xaxis").remove();
+            svg.selectAll("#scatter_yaxis").remove();
+            svg.selectAll("#dots").remove();
+            svg.selectAll(".axis-grid").remove();
+
+            const margin = {top: 50, right: 50, bottom: 50, left: 50};
+            const layer = {width: 600,height:400 };
+
+            //creat year array
+            var years_count = [];
+
+            var years = []
+
+            for (var i = 0; i < max.year-min.year; i++) {
+                years_count[i] = 0;
+            }
+
+
+            dataset.forEach(function(d, i) {
+                years_count[d.year-min.year]++;
+            });
+
+            var data = [{}];
+
+            for (var i = 0; i < years_count.length; i++) {
+                years[i] = min.year + i;
+                data[i] = {"year":years[i].toString(), "count": years_count[i]}
+            }
+
+            
+
+            svg.append("g")
+            .append("text")
+            .text("Sideway Bar Chart")
+            .style("stroke-width", "1.5px")
+            .style("fill", "black")
+            .style("alignment-baseline", "middle")
+            .attr("x", 260)
+            .attr("y", 30)
+            .attr("text-anchor", "left")
+            .attr("font-family", "Poppins")
+            .attr("font-size", "20px");
+
+            const background = d3.select('#chart')
+            .append('svg')
+            .style("background-color", "grey")
+            .attr("width", layer.width)
+            .attr("height", layer.height)
+            .attr("transform",      `translate(-${layer.width+margin.right},-${margin.top})`);
+
+
+            const years_data = data.map(function(object){
+            return object.year;// creating array of keys
+            });
+            const count_data = data.map(function(object){
+            return object.count;// creating array of values
+            });
+            const maxValue =  d3.max(years_data);// defining max value
+            const xScale = d3.scaleLinear() // projecting continuous data into the diagram
+            .domain([d3.max(data, function(d){ return d["count"]; }),0])
+            .range([0,400]);
+
+
+            const yScale = d3.scaleBand() // projecting discrete data into the diagram
+            .domain(years_data)
+            .range([0,500])
+            .paddingInner(0.05);
+            
+            const barColors = d3.scaleLinear() // projecting continuous data into the diagram
+            .domain([0,maxValue])
+            .range([d3.rgb(66,251,75),d3.rgb(200,50,150)])
+
+            const yAxis = d3.axisLeft(yScale)
+            const xAxis = d3.axisBottom(xScale)
+
+
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("y", 590)
+                .attr("x", 270)
+                .text("Count")
+
+            svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 10)
+            .attr("x", -220)
+            .text("Year")
+
+  
+
+            const yCartesian = svg.append("g")
+            .call(yAxis)
+            .attr("id", "hist_yaxis")
+            .attr("transform", `translate(${margin.right},${margin.top})`);
+
+
+            const xCartesian = svg.append("g")
+            .attr("id", "hist_xaxis")
+            .call(xAxis)
+            .attr("transform", `translate(50,550)`)
+            .selectAll("text")  
+            .style("font", "8px times")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-90)");
+
+
+
+            var g = svg.append("g")
+            .attr("transform", "translate(" + 50 + "," + 50 + ")");
+
+            g.selectAll(".bar") //created dynamic bars with our data using the SVG rectangle element.
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("id", "hist_bar")
+            .attr("class", "bar")
+            .attr("width", yScale.bandwidth())
+            .attr("height", function(d){
+                return layer.height - yScale(d.count)
+            })
+            .attr("x", function (d) {
+                return xScale(d.year)
+            })
+            .attr("y", function(d){
+                return yScale(d.count)
+            })
+            .style("fill", function(d){
+                return barColors(d.count)
+            })
+        }
+
+        function buildScatter(x_data, y_data){
+            svg.selectAll("#bar_label").remove();
+            svg.selectAll("#bar_chart").remove();
+            svg.selectAll("#bar_range").remove();
+            svg.selectAll("#bar_y_Axis").remove();
+            svg.selectAll("text").remove();
+            svg.selectAll("#hist_yaxis").remove();
+            svg.selectAll("#hist_xaxis").remove();
+            svg.selectAll("#hist_bar").remove();
+            svg.selectAll("axis").remove();
+            svg.selectAll("dot").remove();
+            svg.selectAll("#scatter_xaxis").remove();
+            svg.selectAll("#scatter_yaxis").remove();
+            svg.selectAll("#dots").remove();
+            svg.selectAll(".axis-grid").remove();
+
+            svg.append("text")
+            .attr("id", "scatter_title")
+            .attr("transform", "translate(100,0)")
+            .attr("x", 200)
+            .attr("y", 50)
+            .attr("font-size", "24px")
+            .text("Voting VS Rating")
+
+            var xScale = d3.scaleLinear().range([0, 400]);//scaleBand() is used to construct a band scale. This is useful when our data has discrete bands.
+                yScale = d3.scaleLinear().range([400, 0]);//a linear scale for the y-axis since this axis will show our stock prices.
+
+            var g = svg.append("g")
+                    .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+
+
+                xScale.domain([d3.min(IMDB, function(d) { return d.rating; }), d3.max(IMDB, function(d) { return d.rating; })]); //provide domain values to the x and y scales, here it's X Scale which is Timestamp
+                yScale.domain([0, d3.max(IMDB, function(d) { return d.votes; })]); // domain value of Fixation Duration to y Scale
+
+                g.append("g") //Another group element to have our x-axis grouped under one group element
+                .attr("id", "scatter_xaxis")
+                .attr("class", "axis")
+                .attr("transform", "translate(0," + 400 + ")") // We then use the transform attribute to shift our x-axis towards the bottom of the SVG.
+                .call(d3.axisBottom(xScale)) //We then insert x-axis on this group element using .call(d3.axisBottom(x)).
+                .append("text")
+                .attr("y", 40)
+                .attr("x", 230)
+                .attr("text-anchor", "end")
+                .attr("stroke", "green")
+                .text("Rating");
+
+                g.append("g") //Another group element to have our y-axis grouped under one group element
+                .attr("class", "axis")
+                .attr("id", "scatter_yaxis")
+                .call(d3.axisLeft(yScale).tickFormat(function(d){ // Try with X Scaling too.
+                    return  d;
+                })
+                .ticks(10)) //We have also specified the number of ticks we would like our y-axis to have using ticks(10).
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -150)
+                .attr("y", -10)
+                .attr("dy", "-5.1em")
+                .attr("text-anchor", "end")
+                .attr("stroke", "green")
+                .text("Votes");
+
+                g.selectAll(".circle") //created dynamic bars with our data using the SVG rectangle element.
+                .data(IMDB)
+                .enter()
+                .append("circle")
+                .attr("class", "dot")
+                .attr("id", "dots")
+                .transition()                 // Keep on changing the place where transition starts and see the difference.
+                .ease(d3.easeLinear)
+                .duration(4000)
+                .delay(function (d, i) {
+                    return i * 50;
+                })
+                // .attr("class", "bar")
+                .attr("r", 3)
+
+                .attr("cx", function(d) { return xScale(d.rating); })
+                //x scale created earlier and pass the year value from our data.
+                .attr("cy", function(d) { return yScale(d.votes); })
+                //.style("fill","red") // pass the data value to our y scale and receive the corresponding y value from the y range.
+                .style("fill", "orange");
+
+        /*
+                .attr("width", xScale.bandwidth()) //width of our bars would be determined by the scaleBand() function.
+                .attr("height", function(d) { return height - yScale(d.FixationDuration); }); //height of the bar would be calculated as height - yScale(d.value)
+                    */                                                                          //the height of the SVG minus the corresponding y-value of the bar from the y-scale
+
+        }
+
+        /** Plot function for Buttons **/      
+        function plot(item){
+            buildChart(binData.chart_mode, IMDB, binData.bin_num, item);
+        }
+
+    </script>
+
+    <div class = "display_block">
+        <p class = "display_title">Top Movies Data</p>
+        
+        
+        <div class = "choose_button">
+            <p class = "display_title">Choose a bin number:</p>
+            <button onclick="buildChart(0, IMDB, 10, 'rating')">10</button>
+            <button onclick="buildChart(0, IMDB, 20, 'rating')">20</button>
+        </div>
+        <div class = "display_button">
+            <p class = "display_title">MENU</p>
+            <button onclick="plot('year')">Year_num</button>
+            <button onclick="plot('duration')">Duration</button>
+            <button onclick="plot('rating')">Rating</button>
+            <button onclick="plot('votes')">Votes</button>
+            <button onclick="buildHistgram(IMDB)">Year_cate</button>
+            <button onclick="buildScatter()">Radio</button>
+            <div style="padding: 20px">
+        </div>
+
+        <div class = "toggle_button">
+            <button onclick="buildhor(IMDB)">Toggle</button>
+        </div>
+    </div>
+</body>
+</html>
+

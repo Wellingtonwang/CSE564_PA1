@@ -1,0 +1,491 @@
+Name of movie,Year of relase,Watchtime,Movie Rating,Votes,Director
+Jai Bhim,2021,164,9.3,"173,295",T.J. Gnanavel
+The Shawshank Redemption,1994,142,9.3,"2,541,091",Frank Darabont
+The Godfather,1972,175,9.2,"1,748,410",Francis Ford Coppola
+Soorarai Pottru,2020,153,9.1,"107,159",Sudha Kongara
+The Dark Knight,2008,152,9,"2,491,371",Christopher Nolan
+The Godfather: Part II,1974,202,9,"1,212,675",Francis Ford Coppola
+12 Angry Men,1957,96,9,"750,853",Sidney Lumet
+The Lord of the Rings: The Return of the King,2003,201,8.9,"1,752,093",Peter Jackson
+Pulp Fiction,1994,154,8.9,"1,955,203",Quentin Tarantino
+Schindler's List,1993,195,8.9,"1,297,426",Steven Spielberg
+Inception,2010,148,8.8,"2,231,967",Christopher Nolan
+Fight Club,1999,139,8.8,"1,999,930",David Fincher
+The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,"1,773,739",Peter Jackson
+Forrest Gump,1994,142,8.8,"1,960,705",Robert Zemeckis
+"Il buono, il brutto, il cattivo",1966,161,8.8,"733,443",Sergio Leone
+Spider-Man: No Way Home,2021,148,8.7,"446,741",Jon Watts
+Dara iz Jasenovca,2020,130,8.7,"80,317",Predrag Antonijevic
+Shershaah,2021,135,8.7,"112,894",Vishnuvardhan
+Sardar Udham,2021,164,8.7,"35,937",Shoojit Sircar
+The Lord of the Rings: The Two Towers,2002,179,8.7,"1,583,030",Peter Jackson
+The Matrix,1999,136,8.7,"1,833,574","Directors:Lana Wachowski, Lilly Wachowski"
+Goodfellas,1990,146,8.7,"1,098,360",Martin Scorsese
+Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,"1,232,350",Irvin Kershner
+One Flew Over the Cuckoo's Nest,1975,133,8.7,"971,935",Milos Forman
+Gisaengchung,2019,132,8.6,"715,000",Bong Joon Ho
+Drishyam 2,2021,152,8.6,"33,758",Jeethu Joseph
+Interstellar,2014,169,8.6,"1,686,136",Christopher Nolan
+Cidade de Deus,2002,130,8.6,"733,935","Directors:Fernando Meirelles, Kátia Lund"
+Sen to Chihiro no kamikakushi,2001,125,8.6,"717,130",Hayao Miyazaki
+Saving Private Ryan,1998,169,8.6,"1,325,681",Steven Spielberg
+The Green Mile,1999,189,8.6,"1,236,038",Frank Darabont
+La vita è bella,1997,116,8.6,"667,465",Roberto Benigni
+Se7en,1995,127,8.6,"1,558,328",David Fincher
+The Silence of the Lambs,1991,118,8.6,"1,365,108",Jonathan Demme
+Star Wars,1977,121,8.6,"1,303,834",George Lucas
+Seppuku,1962,133,8.6,"52,120",Masaki Kobayashi
+Shichinin no samurai,1954,207,8.6,"335,289",Akira Kurosawa
+It's a Wonderful Life,1946,130,8.6,"439,422",Frank Capra
+Whiplash,2014,106,8.5,"790,012",Damien Chazelle
+The Intouchables,2011,112,8.5,"818,498","Directors:Olivier Nakache, Éric Toledano"
+The Prestige,2006,130,8.5,"1,275,216",Christopher Nolan
+The Departed,2006,151,8.5,"1,268,485",Martin Scorsese
+The Pianist,2002,150,8.5,"792,133",Roman Polanski
+Gladiator,2000,155,8.5,"1,433,333",Ridley Scott
+American History X,1998,119,8.5,"1,085,169",Tony Kaye
+The Usual Suspects,1995,106,8.5,"1,048,782",Bryan Singer
+Léon,1994,110,8.5,"1,109,950",Luc Besson
+The Lion King,1994,88,8.5,"1,008,208","Directors:Roger Allers, Rob Minkoff"
+Terminator 2: Judgment Day,1991,137,8.5,"1,054,937",James Cameron
+Nuovo Cinema Paradiso,1988,155,8.5,"251,126",Giuseppe Tornatore
+Hotaru no haka,1988,89,8.5,"261,106",Isao Takahata
+Back to the Future,1985,116,8.5,"1,142,127",Robert Zemeckis
+Once Upon a Time in the West,1968,165,8.5,"320,006",Sergio Leone
+Psycho,1960,109,8.5,"644,878",Alfred Hitchcock
+Rear Window,1954,112,8.5,"474,965",Alfred Hitchcock
+Casablanca,1942,102,8.5,"553,188",Michael Curtiz
+Modern Times,1936,87,8.5,"234,008",Charles Chaplin
+City Lights,1931,87,8.5,"179,561",Charles Chaplin
+Hamilton,2020,160,8.4,"82,346",Thomas Kail
+Capharnaüm,2018,126,8.4,"81,524",Nadine Labaki
+Joker,2019,122,8.4,"1,140,433",Todd Phillips
+Ratsasan,2018,170,8.4,"37,823",Ram Kumar
+Ayla: The Daughter of War,2017,125,8.4,"38,122","Directors:Can Ulkay, Halenur Uzunoglu"
+Kimi no na wa.,2016,106,8.4,"240,231",Makoto Shinkai
+Dangal,2016,161,8.4,"177,898",Nitesh Tiwari
+Spider-Man: Into the Spider-Verse,2018,117,8.4,"468,615","Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman"
+Avengers: Endgame,2019,181,8.4,"1,009,668","Directors:Anthony Russo, Joe Russo"
+Avengers: Infinity War,2018,149,8.4,"978,404","Directors:Anthony Russo, Joe Russo"
+Coco,2017,105,8.4,"460,262","Directors:Lee Unkrich, Adrian Molina"
+Django Unchained,2012,165,8.4,"1,468,574",Quentin Tarantino
+The Dark Knight Rises,2012,164,8.4,"1,615,621",Christopher Nolan
+3 Idiots,2009,170,8.4,"378,083",Rajkumar Hirani
+Taare Zameen Par,2007,165,8.4,"185,367","Directors:Aamir Khan, Amole Gupte"
+WALL·E,2008,98,8.4,"1,067,559",Andrew Stanton
+The Lives of Others,2006,137,8.4,"379,379",Florian Henckel von Donnersmarck
+Oldeuboi,2003,101,8.4,"554,140",Park Chan-wook
+Memento,2000,113,8.4,"1,192,556",Christopher Nolan
+Mononoke-hime,1997,134,8.4,"375,323",Hayao Miyazaki
+Raiders of the Lost Ark,1981,115,8.4,"933,417",Steven Spielberg
+The Shining,1980,146,8.4,"969,653",Stanley Kubrick
+Apocalypse Now,1979,147,8.4,"642,854",Francis Ford Coppola
+Alien,1979,117,8.4,"842,082",Ridley Scott
+Tengoku to jigoku,1963,143,8.4,"41,577",Akira Kurosawa
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,"475,060",Stanley Kubrick
+Witness for the Prosecution,1957,116,8.4,"120,110",Billy Wilder
+Paths of Glory,1957,88,8.4,"190,880",Stanley Kubrick
+Pather Panchali,1955,125,8.4,"30,456",Satyajit Ray
+Sunset Blvd.,1950,110,8.4,"215,100",Billy Wilder
+The Great Dictator,1940,125,8.4,"217,507",Charles Chaplin
+Chhichhore,2019,143,8.3,"47,550",Nitesh Tiwari
+Uri: The Surgical Strike,2019,138,8.3,"55,176",Aditya Dhar
+Tumbbad,2018,104,8.3,"39,757","Directors:Rahi Anil Barve, Anand Gandhi, Adesh Prasad"
+K.G.F: Chapter 1,2018,156,8.3,"54,515",Prashanth Neel
+Vikram Vedha,2017,147,8.3,"35,901","Directors:Gayatri, Pushkar"
+Drishyam,2013,160,8.3,"39,570",Jeethu Joseph
+Jagten,2012,115,8.3,"313,647",Thomas Vinterberg
+Jodaeiye Nader az Simin,2011,123,8.3,"238,130",Asghar Farhadi
+Incendies,2010,131,8.3,"168,727",Denis Villeneuve
+Jai Bhim,2021,164,9.3,"173,295",T.J. Gnanavel
+The Shawshank Redemption,1994,142,9.3,"2,541,091",Frank Darabont
+The Godfather,1972,175,9.2,"1,748,410",Francis Ford Coppola
+Soorarai Pottru,2020,153,9.1,"107,159",Sudha Kongara
+The Dark Knight,2008,152,9,"2,491,371",Christopher Nolan
+The Godfather: Part II,1974,202,9,"1,212,675",Francis Ford Coppola
+12 Angry Men,1957,96,9,"750,853",Sidney Lumet
+The Lord of the Rings: The Return of the King,2003,201,8.9,"1,752,093",Peter Jackson
+Pulp Fiction,1994,154,8.9,"1,955,203",Quentin Tarantino
+Schindler's List,1993,195,8.9,"1,297,426",Steven Spielberg
+Inception,2010,148,8.8,"2,231,967",Christopher Nolan
+Fight Club,1999,139,8.8,"1,999,930",David Fincher
+The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,"1,773,739",Peter Jackson
+Forrest Gump,1994,142,8.8,"1,960,705",Robert Zemeckis
+"Il buono, il brutto, il cattivo",1966,161,8.8,"733,443",Sergio Leone
+Spider-Man: No Way Home,2021,148,8.7,"446,741",Jon Watts
+Dara iz Jasenovca,2020,130,8.7,"80,317",Predrag Antonijevic
+Shershaah,2021,135,8.7,"112,894",Vishnuvardhan
+Sardar Udham,2021,164,8.7,"35,937",Shoojit Sircar
+The Lord of the Rings: The Two Towers,2002,179,8.7,"1,583,030",Peter Jackson
+The Matrix,1999,136,8.7,"1,833,574","Directors:Lana Wachowski, Lilly Wachowski"
+Goodfellas,1990,146,8.7,"1,098,360",Martin Scorsese
+Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,"1,232,350",Irvin Kershner
+One Flew Over the Cuckoo's Nest,1975,133,8.7,"971,935",Milos Forman
+Gisaengchung,2019,132,8.6,"715,000",Bong Joon Ho
+Drishyam 2,2021,152,8.6,"33,758",Jeethu Joseph
+Interstellar,2014,169,8.6,"1,686,136",Christopher Nolan
+Cidade de Deus,2002,130,8.6,"733,935","Directors:Fernando Meirelles, Kátia Lund"
+Sen to Chihiro no kamikakushi,2001,125,8.6,"717,130",Hayao Miyazaki
+Saving Private Ryan,1998,169,8.6,"1,325,681",Steven Spielberg
+The Green Mile,1999,189,8.6,"1,236,038",Frank Darabont
+La vita è bella,1997,116,8.6,"667,465",Roberto Benigni
+Se7en,1995,127,8.6,"1,558,328",David Fincher
+The Silence of the Lambs,1991,118,8.6,"1,365,108",Jonathan Demme
+Star Wars,1977,121,8.6,"1,303,834",George Lucas
+Seppuku,1962,133,8.6,"52,120",Masaki Kobayashi
+Shichinin no samurai,1954,207,8.6,"335,289",Akira Kurosawa
+It's a Wonderful Life,1946,130,8.6,"439,422",Frank Capra
+Whiplash,2014,106,8.5,"790,012",Damien Chazelle
+The Intouchables,2011,112,8.5,"818,498","Directors:Olivier Nakache, Éric Toledano"
+The Prestige,2006,130,8.5,"1,275,216",Christopher Nolan
+The Departed,2006,151,8.5,"1,268,485",Martin Scorsese
+The Pianist,2002,150,8.5,"792,133",Roman Polanski
+Gladiator,2000,155,8.5,"1,433,333",Ridley Scott
+American History X,1998,119,8.5,"1,085,169",Tony Kaye
+The Usual Suspects,1995,106,8.5,"1,048,782",Bryan Singer
+Léon,1994,110,8.5,"1,109,950",Luc Besson
+The Lion King,1994,88,8.5,"1,008,208","Directors:Roger Allers, Rob Minkoff"
+Terminator 2: Judgment Day,1991,137,8.5,"1,054,937",James Cameron
+Nuovo Cinema Paradiso,1988,155,8.5,"251,126",Giuseppe Tornatore
+Hotaru no haka,1988,89,8.5,"261,106",Isao Takahata
+Back to the Future,1985,116,8.5,"1,142,127",Robert Zemeckis
+Once Upon a Time in the West,1968,165,8.5,"320,006",Sergio Leone
+Psycho,1960,109,8.5,"644,878",Alfred Hitchcock
+Rear Window,1954,112,8.5,"474,965",Alfred Hitchcock
+Casablanca,1942,102,8.5,"553,188",Michael Curtiz
+Modern Times,1936,87,8.5,"234,008",Charles Chaplin
+City Lights,1931,87,8.5,"179,561",Charles Chaplin
+Hamilton,2020,160,8.4,"82,346",Thomas Kail
+Capharnaüm,2018,126,8.4,"81,524",Nadine Labaki
+Joker,2019,122,8.4,"1,140,433",Todd Phillips
+Ratsasan,2018,170,8.4,"37,823",Ram Kumar
+Ayla: The Daughter of War,2017,125,8.4,"38,122","Directors:Can Ulkay, Halenur Uzunoglu"
+Kimi no na wa.,2016,106,8.4,"240,231",Makoto Shinkai
+Dangal,2016,161,8.4,"177,898",Nitesh Tiwari
+Spider-Man: Into the Spider-Verse,2018,117,8.4,"468,615","Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman"
+Avengers: Endgame,2019,181,8.4,"1,009,668","Directors:Anthony Russo, Joe Russo"
+Avengers: Infinity War,2018,149,8.4,"978,404","Directors:Anthony Russo, Joe Russo"
+Coco,2017,105,8.4,"460,262","Directors:Lee Unkrich, Adrian Molina"
+Django Unchained,2012,165,8.4,"1,468,574",Quentin Tarantino
+The Dark Knight Rises,2012,164,8.4,"1,615,621",Christopher Nolan
+3 Idiots,2009,170,8.4,"378,083",Rajkumar Hirani
+Taare Zameen Par,2007,165,8.4,"185,367","Directors:Aamir Khan, Amole Gupte"
+WALL·E,2008,98,8.4,"1,067,559",Andrew Stanton
+The Lives of Others,2006,137,8.4,"379,379",Florian Henckel von Donnersmarck
+Oldeuboi,2003,101,8.4,"554,140",Park Chan-wook
+Memento,2000,113,8.4,"1,192,556",Christopher Nolan
+Mononoke-hime,1997,134,8.4,"375,323",Hayao Miyazaki
+Raiders of the Lost Ark,1981,115,8.4,"933,417",Steven Spielberg
+The Shining,1980,146,8.4,"969,653",Stanley Kubrick
+Apocalypse Now,1979,147,8.4,"642,854",Francis Ford Coppola
+Alien,1979,117,8.4,"842,082",Ridley Scott
+Tengoku to jigoku,1963,143,8.4,"41,577",Akira Kurosawa
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,"475,060",Stanley Kubrick
+Witness for the Prosecution,1957,116,8.4,"120,110",Billy Wilder
+Paths of Glory,1957,88,8.4,"190,880",Stanley Kubrick
+Pather Panchali,1955,125,8.4,"30,456",Satyajit Ray
+Sunset Blvd.,1950,110,8.4,"215,100",Billy Wilder
+The Great Dictator,1940,125,8.4,"217,507",Charles Chaplin
+Chhichhore,2019,143,8.3,"47,550",Nitesh Tiwari
+Uri: The Surgical Strike,2019,138,8.3,"55,176",Aditya Dhar
+Tumbbad,2018,104,8.3,"39,757","Directors:Rahi Anil Barve, Anand Gandhi, Adesh Prasad"
+K.G.F: Chapter 1,2018,156,8.3,"54,515",Prashanth Neel
+Vikram Vedha,2017,147,8.3,"35,901","Directors:Gayatri, Pushkar"
+Drishyam,2013,160,8.3,"39,570",Jeethu Joseph
+Jagten,2012,115,8.3,"313,647",Thomas Vinterberg
+Jodaeiye Nader az Simin,2011,123,8.3,"238,130",Asghar Farhadi
+Incendies,2010,131,8.3,"168,727",Denis Villeneuve
+Jai Bhim,2021,164,9.3,"173,295",T.J. Gnanavel
+The Shawshank Redemption,1994,142,9.3,"2,541,091",Frank Darabont
+The Godfather,1972,175,9.2,"1,748,410",Francis Ford Coppola
+Soorarai Pottru,2020,153,9.1,"107,159",Sudha Kongara
+The Dark Knight,2008,152,9,"2,491,371",Christopher Nolan
+The Godfather: Part II,1974,202,9,"1,212,675",Francis Ford Coppola
+12 Angry Men,1957,96,9,"750,853",Sidney Lumet
+The Lord of the Rings: The Return of the King,2003,201,8.9,"1,752,093",Peter Jackson
+Pulp Fiction,1994,154,8.9,"1,955,203",Quentin Tarantino
+Schindler's List,1993,195,8.9,"1,297,426",Steven Spielberg
+Inception,2010,148,8.8,"2,231,967",Christopher Nolan
+Fight Club,1999,139,8.8,"1,999,930",David Fincher
+The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,"1,773,739",Peter Jackson
+Forrest Gump,1994,142,8.8,"1,960,705",Robert Zemeckis
+"Il buono, il brutto, il cattivo",1966,161,8.8,"733,443",Sergio Leone
+Spider-Man: No Way Home,2021,148,8.7,"446,741",Jon Watts
+Dara iz Jasenovca,2020,130,8.7,"80,317",Predrag Antonijevic
+Shershaah,2021,135,8.7,"112,894",Vishnuvardhan
+Sardar Udham,2021,164,8.7,"35,937",Shoojit Sircar
+The Lord of the Rings: The Two Towers,2002,179,8.7,"1,583,030",Peter Jackson
+The Matrix,1999,136,8.7,"1,833,574","Directors:Lana Wachowski, Lilly Wachowski"
+Goodfellas,1990,146,8.7,"1,098,360",Martin Scorsese
+Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,"1,232,350",Irvin Kershner
+One Flew Over the Cuckoo's Nest,1975,133,8.7,"971,935",Milos Forman
+Gisaengchung,2019,132,8.6,"715,000",Bong Joon Ho
+Drishyam 2,2021,152,8.6,"33,758",Jeethu Joseph
+Interstellar,2014,169,8.6,"1,686,136",Christopher Nolan
+Cidade de Deus,2002,130,8.6,"733,935","Directors:Fernando Meirelles, Kátia Lund"
+Sen to Chihiro no kamikakushi,2001,125,8.6,"717,130",Hayao Miyazaki
+Saving Private Ryan,1998,169,8.6,"1,325,681",Steven Spielberg
+The Green Mile,1999,189,8.6,"1,236,038",Frank Darabont
+La vita è bella,1997,116,8.6,"667,465",Roberto Benigni
+Se7en,1995,127,8.6,"1,558,328",David Fincher
+The Silence of the Lambs,1991,118,8.6,"1,365,108",Jonathan Demme
+Star Wars,1977,121,8.6,"1,303,834",George Lucas
+Seppuku,1962,133,8.6,"52,120",Masaki Kobayashi
+Shichinin no samurai,1954,207,8.6,"335,289",Akira Kurosawa
+It's a Wonderful Life,1946,130,8.6,"439,422",Frank Capra
+Whiplash,2014,106,8.5,"790,012",Damien Chazelle
+The Intouchables,2011,112,8.5,"818,498","Directors:Olivier Nakache, Éric Toledano"
+The Prestige,2006,130,8.5,"1,275,216",Christopher Nolan
+The Departed,2006,151,8.5,"1,268,485",Martin Scorsese
+The Pianist,2002,150,8.5,"792,133",Roman Polanski
+Gladiator,2000,155,8.5,"1,433,333",Ridley Scott
+American History X,1998,119,8.5,"1,085,169",Tony Kaye
+The Usual Suspects,1995,106,8.5,"1,048,782",Bryan Singer
+Léon,1994,110,8.5,"1,109,950",Luc Besson
+The Lion King,1994,88,8.5,"1,008,208","Directors:Roger Allers, Rob Minkoff"
+Terminator 2: Judgment Day,1991,137,8.5,"1,054,937",James Cameron
+Nuovo Cinema Paradiso,1988,155,8.5,"251,126",Giuseppe Tornatore
+Hotaru no haka,1988,89,8.5,"261,106",Isao Takahata
+Back to the Future,1985,116,8.5,"1,142,127",Robert Zemeckis
+Once Upon a Time in the West,1968,165,8.5,"320,006",Sergio Leone
+Psycho,1960,109,8.5,"644,878",Alfred Hitchcock
+Rear Window,1954,112,8.5,"474,965",Alfred Hitchcock
+Casablanca,1942,102,8.5,"553,188",Michael Curtiz
+Modern Times,1936,87,8.5,"234,008",Charles Chaplin
+City Lights,1931,87,8.5,"179,561",Charles Chaplin
+Hamilton,2020,160,8.4,"82,346",Thomas Kail
+Capharnaüm,2018,126,8.4,"81,524",Nadine Labaki
+Joker,2019,122,8.4,"1,140,433",Todd Phillips
+Ratsasan,2018,170,8.4,"37,823",Ram Kumar
+Ayla: The Daughter of War,2017,125,8.4,"38,122","Directors:Can Ulkay, Halenur Uzunoglu"
+Kimi no na wa.,2016,106,8.4,"240,231",Makoto Shinkai
+Dangal,2016,161,8.4,"177,898",Nitesh Tiwari
+Spider-Man: Into the Spider-Verse,2018,117,8.4,"468,615","Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman"
+Avengers: Endgame,2019,181,8.4,"1,009,668","Directors:Anthony Russo, Joe Russo"
+Avengers: Infinity War,2018,149,8.4,"978,404","Directors:Anthony Russo, Joe Russo"
+Coco,2017,105,8.4,"460,262","Directors:Lee Unkrich, Adrian Molina"
+Django Unchained,2012,165,8.4,"1,468,574",Quentin Tarantino
+The Dark Knight Rises,2012,164,8.4,"1,615,621",Christopher Nolan
+3 Idiots,2009,170,8.4,"378,083",Rajkumar Hirani
+Taare Zameen Par,2007,165,8.4,"185,367","Directors:Aamir Khan, Amole Gupte"
+WALL·E,2008,98,8.4,"1,067,559",Andrew Stanton
+The Lives of Others,2006,137,8.4,"379,379",Florian Henckel von Donnersmarck
+Oldeuboi,2003,101,8.4,"554,140",Park Chan-wook
+Memento,2000,113,8.4,"1,192,556",Christopher Nolan
+Mononoke-hime,1997,134,8.4,"375,323",Hayao Miyazaki
+Raiders of the Lost Ark,1981,115,8.4,"933,417",Steven Spielberg
+The Shining,1980,146,8.4,"969,653",Stanley Kubrick
+Apocalypse Now,1979,147,8.4,"642,854",Francis Ford Coppola
+Alien,1979,117,8.4,"842,082",Ridley Scott
+Tengoku to jigoku,1963,143,8.4,"41,577",Akira Kurosawa
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,"475,060",Stanley Kubrick
+Witness for the Prosecution,1957,116,8.4,"120,110",Billy Wilder
+Paths of Glory,1957,88,8.4,"190,880",Stanley Kubrick
+Pather Panchali,1955,125,8.4,"30,456",Satyajit Ray
+Sunset Blvd.,1950,110,8.4,"215,100",Billy Wilder
+The Great Dictator,1940,125,8.4,"217,507",Charles Chaplin
+Chhichhore,2019,143,8.3,"47,550",Nitesh Tiwari
+Uri: The Surgical Strike,2019,138,8.3,"55,176",Aditya Dhar
+Tumbbad,2018,104,8.3,"39,757","Directors:Rahi Anil Barve, Anand Gandhi, Adesh Prasad"
+K.G.F: Chapter 1,2018,156,8.3,"54,515",Prashanth Neel
+Vikram Vedha,2017,147,8.3,"35,901","Directors:Gayatri, Pushkar"
+Drishyam,2013,160,8.3,"39,570",Jeethu Joseph
+Jagten,2012,115,8.3,"313,647",Thomas Vinterberg
+Jodaeiye Nader az Simin,2011,123,8.3,"238,130",Asghar Farhadi
+Incendies,2010,131,8.3,"168,727",Denis Villeneuve
+Jai Bhim,2021,164,9.3,"173,295",T.J. Gnanavel
+The Shawshank Redemption,1994,142,9.3,"2,541,091",Frank Darabont
+The Godfather,1972,175,9.2,"1,748,410",Francis Ford Coppola
+Soorarai Pottru,2020,153,9.1,"107,159",Sudha Kongara
+The Dark Knight,2008,152,9,"2,491,371",Christopher Nolan
+The Godfather: Part II,1974,202,9,"1,212,675",Francis Ford Coppola
+12 Angry Men,1957,96,9,"750,853",Sidney Lumet
+The Lord of the Rings: The Return of the King,2003,201,8.9,"1,752,093",Peter Jackson
+Pulp Fiction,1994,154,8.9,"1,955,203",Quentin Tarantino
+Schindler's List,1993,195,8.9,"1,297,426",Steven Spielberg
+Inception,2010,148,8.8,"2,231,967",Christopher Nolan
+Fight Club,1999,139,8.8,"1,999,930",David Fincher
+The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,"1,773,739",Peter Jackson
+Forrest Gump,1994,142,8.8,"1,960,705",Robert Zemeckis
+"Il buono, il brutto, il cattivo",1966,161,8.8,"733,443",Sergio Leone
+Spider-Man: No Way Home,2021,148,8.7,"446,741",Jon Watts
+Dara iz Jasenovca,2020,130,8.7,"80,317",Predrag Antonijevic
+Shershaah,2021,135,8.7,"112,894",Vishnuvardhan
+Sardar Udham,2021,164,8.7,"35,937",Shoojit Sircar
+The Lord of the Rings: The Two Towers,2002,179,8.7,"1,583,030",Peter Jackson
+The Matrix,1999,136,8.7,"1,833,574","Directors:Lana Wachowski, Lilly Wachowski"
+Goodfellas,1990,146,8.7,"1,098,360",Martin Scorsese
+Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,"1,232,350",Irvin Kershner
+One Flew Over the Cuckoo's Nest,1975,133,8.7,"971,935",Milos Forman
+Gisaengchung,2019,132,8.6,"715,000",Bong Joon Ho
+Drishyam 2,2021,152,8.6,"33,758",Jeethu Joseph
+Interstellar,2014,169,8.6,"1,686,136",Christopher Nolan
+Cidade de Deus,2002,130,8.6,"733,935","Directors:Fernando Meirelles, Kátia Lund"
+Sen to Chihiro no kamikakushi,2001,125,8.6,"717,130",Hayao Miyazaki
+Saving Private Ryan,1998,169,8.6,"1,325,681",Steven Spielberg
+The Green Mile,1999,189,8.6,"1,236,038",Frank Darabont
+La vita è bella,1997,116,8.6,"667,465",Roberto Benigni
+Se7en,1995,127,8.6,"1,558,328",David Fincher
+The Silence of the Lambs,1991,118,8.6,"1,365,108",Jonathan Demme
+Star Wars,1977,121,8.6,"1,303,834",George Lucas
+Seppuku,1962,133,8.6,"52,120",Masaki Kobayashi
+Shichinin no samurai,1954,207,8.6,"335,289",Akira Kurosawa
+It's a Wonderful Life,1946,130,8.6,"439,422",Frank Capra
+Whiplash,2014,106,8.5,"790,012",Damien Chazelle
+The Intouchables,2011,112,8.5,"818,498","Directors:Olivier Nakache, Éric Toledano"
+The Prestige,2006,130,8.5,"1,275,216",Christopher Nolan
+The Departed,2006,151,8.5,"1,268,485",Martin Scorsese
+The Pianist,2002,150,8.5,"792,133",Roman Polanski
+Gladiator,2000,155,8.5,"1,433,333",Ridley Scott
+American History X,1998,119,8.5,"1,085,169",Tony Kaye
+The Usual Suspects,1995,106,8.5,"1,048,782",Bryan Singer
+Léon,1994,110,8.5,"1,109,950",Luc Besson
+The Lion King,1994,88,8.5,"1,008,208","Directors:Roger Allers, Rob Minkoff"
+Terminator 2: Judgment Day,1991,137,8.5,"1,054,937",James Cameron
+Nuovo Cinema Paradiso,1988,155,8.5,"251,126",Giuseppe Tornatore
+Hotaru no haka,1988,89,8.5,"261,106",Isao Takahata
+Back to the Future,1985,116,8.5,"1,142,127",Robert Zemeckis
+Once Upon a Time in the West,1968,165,8.5,"320,006",Sergio Leone
+Psycho,1960,109,8.5,"644,878",Alfred Hitchcock
+Rear Window,1954,112,8.5,"474,965",Alfred Hitchcock
+Casablanca,1942,102,8.5,"553,188",Michael Curtiz
+Modern Times,1936,87,8.5,"234,008",Charles Chaplin
+City Lights,1931,87,8.5,"179,561",Charles Chaplin
+Hamilton,2020,160,8.4,"82,346",Thomas Kail
+Capharnaüm,2018,126,8.4,"81,524",Nadine Labaki
+Joker,2019,122,8.4,"1,140,433",Todd Phillips
+Ratsasan,2018,170,8.4,"37,823",Ram Kumar
+Ayla: The Daughter of War,2017,125,8.4,"38,122","Directors:Can Ulkay, Halenur Uzunoglu"
+Kimi no na wa.,2016,106,8.4,"240,231",Makoto Shinkai
+Dangal,2016,161,8.4,"177,898",Nitesh Tiwari
+Spider-Man: Into the Spider-Verse,2018,117,8.4,"468,615","Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman"
+Avengers: Endgame,2019,181,8.4,"1,009,668","Directors:Anthony Russo, Joe Russo"
+Avengers: Infinity War,2018,149,8.4,"978,404","Directors:Anthony Russo, Joe Russo"
+Coco,2017,105,8.4,"460,262","Directors:Lee Unkrich, Adrian Molina"
+Django Unchained,2012,165,8.4,"1,468,574",Quentin Tarantino
+The Dark Knight Rises,2012,164,8.4,"1,615,621",Christopher Nolan
+3 Idiots,2009,170,8.4,"378,083",Rajkumar Hirani
+Taare Zameen Par,2007,165,8.4,"185,367","Directors:Aamir Khan, Amole Gupte"
+WALL·E,2008,98,8.4,"1,067,559",Andrew Stanton
+The Lives of Others,2006,137,8.4,"379,379",Florian Henckel von Donnersmarck
+Oldeuboi,2003,101,8.4,"554,140",Park Chan-wook
+Memento,2000,113,8.4,"1,192,556",Christopher Nolan
+Mononoke-hime,1997,134,8.4,"375,323",Hayao Miyazaki
+Raiders of the Lost Ark,1981,115,8.4,"933,417",Steven Spielberg
+The Shining,1980,146,8.4,"969,653",Stanley Kubrick
+Apocalypse Now,1979,147,8.4,"642,854",Francis Ford Coppola
+Alien,1979,117,8.4,"842,082",Ridley Scott
+Tengoku to jigoku,1963,143,8.4,"41,577",Akira Kurosawa
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,"475,060",Stanley Kubrick
+Witness for the Prosecution,1957,116,8.4,"120,110",Billy Wilder
+Paths of Glory,1957,88,8.4,"190,880",Stanley Kubrick
+Pather Panchali,1955,125,8.4,"30,456",Satyajit Ray
+Sunset Blvd.,1950,110,8.4,"215,100",Billy Wilder
+The Great Dictator,1940,125,8.4,"217,507",Charles Chaplin
+Chhichhore,2019,143,8.3,"47,550",Nitesh Tiwari
+Uri: The Surgical Strike,2019,138,8.3,"55,176",Aditya Dhar
+Tumbbad,2018,104,8.3,"39,757","Directors:Rahi Anil Barve, Anand Gandhi, Adesh Prasad"
+K.G.F: Chapter 1,2018,156,8.3,"54,515",Prashanth Neel
+Vikram Vedha,2017,147,8.3,"35,901","Directors:Gayatri, Pushkar"
+Drishyam,2013,160,8.3,"39,570",Jeethu Joseph
+Jagten,2012,115,8.3,"313,647",Thomas Vinterberg
+Jodaeiye Nader az Simin,2011,123,8.3,"238,130",Asghar Farhadi
+Incendies,2010,131,8.3,"168,727",Denis Villeneuve
+Jai Bhim,2021,164,9.3,"173,295",T.J. Gnanavel
+The Shawshank Redemption,1994,142,9.3,"2,541,091",Frank Darabont
+The Godfather,1972,175,9.2,"1,748,410",Francis Ford Coppola
+Soorarai Pottru,2020,153,9.1,"107,159",Sudha Kongara
+The Dark Knight,2008,152,9,"2,491,371",Christopher Nolan
+The Godfather: Part II,1974,202,9,"1,212,675",Francis Ford Coppola
+12 Angry Men,1957,96,9,"750,853",Sidney Lumet
+The Lord of the Rings: The Return of the King,2003,201,8.9,"1,752,093",Peter Jackson
+Pulp Fiction,1994,154,8.9,"1,955,203",Quentin Tarantino
+Schindler's List,1993,195,8.9,"1,297,426",Steven Spielberg
+Inception,2010,148,8.8,"2,231,967",Christopher Nolan
+Fight Club,1999,139,8.8,"1,999,930",David Fincher
+The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,"1,773,739",Peter Jackson
+Forrest Gump,1994,142,8.8,"1,960,705",Robert Zemeckis
+"Il buono, il brutto, il cattivo",1966,161,8.8,"733,443",Sergio Leone
+Spider-Man: No Way Home,2021,148,8.7,"446,741",Jon Watts
+Dara iz Jasenovca,2020,130,8.7,"80,317",Predrag Antonijevic
+Shershaah,2021,135,8.7,"112,894",Vishnuvardhan
+Sardar Udham,2021,164,8.7,"35,937",Shoojit Sircar
+The Lord of the Rings: The Two Towers,2002,179,8.7,"1,583,030",Peter Jackson
+The Matrix,1999,136,8.7,"1,833,574","Directors:Lana Wachowski, Lilly Wachowski"
+Goodfellas,1990,146,8.7,"1,098,360",Martin Scorsese
+Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,"1,232,350",Irvin Kershner
+One Flew Over the Cuckoo's Nest,1975,133,8.7,"971,935",Milos Forman
+Gisaengchung,2019,132,8.6,"715,000",Bong Joon Ho
+Drishyam 2,2021,152,8.6,"33,758",Jeethu Joseph
+Interstellar,2014,169,8.6,"1,686,136",Christopher Nolan
+Cidade de Deus,2002,130,8.6,"733,935","Directors:Fernando Meirelles, Kátia Lund"
+Sen to Chihiro no kamikakushi,2001,125,8.6,"717,130",Hayao Miyazaki
+Saving Private Ryan,1998,169,8.6,"1,325,681",Steven Spielberg
+The Green Mile,1999,189,8.6,"1,236,038",Frank Darabont
+La vita è bella,1997,116,8.6,"667,465",Roberto Benigni
+Se7en,1995,127,8.6,"1,558,328",David Fincher
+The Silence of the Lambs,1991,118,8.6,"1,365,108",Jonathan Demme
+Star Wars,1977,121,8.6,"1,303,834",George Lucas
+Seppuku,1962,133,8.6,"52,120",Masaki Kobayashi
+Shichinin no samurai,1954,207,8.6,"335,289",Akira Kurosawa
+It's a Wonderful Life,1946,130,8.6,"439,422",Frank Capra
+Whiplash,2014,106,8.5,"790,012",Damien Chazelle
+The Intouchables,2011,112,8.5,"818,498","Directors:Olivier Nakache, Éric Toledano"
+The Prestige,2006,130,8.5,"1,275,216",Christopher Nolan
+The Departed,2006,151,8.5,"1,268,485",Martin Scorsese
+The Pianist,2002,150,8.5,"792,133",Roman Polanski
+Gladiator,2000,155,8.5,"1,433,333",Ridley Scott
+American History X,1998,119,8.5,"1,085,169",Tony Kaye
+The Usual Suspects,1995,106,8.5,"1,048,782",Bryan Singer
+Léon,1994,110,8.5,"1,109,950",Luc Besson
+The Lion King,1994,88,8.5,"1,008,208","Directors:Roger Allers, Rob Minkoff"
+Terminator 2: Judgment Day,1991,137,8.5,"1,054,937",James Cameron
+Nuovo Cinema Paradiso,1988,155,8.5,"251,126",Giuseppe Tornatore
+Hotaru no haka,1988,89,8.5,"261,106",Isao Takahata
+Back to the Future,1985,116,8.5,"1,142,127",Robert Zemeckis
+Once Upon a Time in the West,1968,165,8.5,"320,006",Sergio Leone
+Psycho,1960,109,8.5,"644,878",Alfred Hitchcock
+Rear Window,1954,112,8.5,"474,965",Alfred Hitchcock
+Casablanca,1942,102,8.5,"553,188",Michael Curtiz
+Modern Times,1936,87,8.5,"234,008",Charles Chaplin
+City Lights,1931,87,8.5,"179,561",Charles Chaplin
+Hamilton,2020,160,8.4,"82,346",Thomas Kail
+Capharnaüm,2018,126,8.4,"81,524",Nadine Labaki
+Joker,2019,122,8.4,"1,140,433",Todd Phillips
+Ratsasan,2018,170,8.4,"37,823",Ram Kumar
+Ayla: The Daughter of War,2017,125,8.4,"38,122","Directors:Can Ulkay, Halenur Uzunoglu"
+Kimi no na wa.,2016,106,8.4,"240,231",Makoto Shinkai
+Dangal,2016,161,8.4,"177,898",Nitesh Tiwari
+Spider-Man: Into the Spider-Verse,2018,117,8.4,"468,615","Directors:Bob Persichetti, Peter Ramsey, Rodney Rothman"
+Avengers: Endgame,2019,181,8.4,"1,009,668","Directors:Anthony Russo, Joe Russo"
+Avengers: Infinity War,2018,149,8.4,"978,404","Directors:Anthony Russo, Joe Russo"
+Coco,2017,105,8.4,"460,262","Directors:Lee Unkrich, Adrian Molina"
+Django Unchained,2012,165,8.4,"1,468,574",Quentin Tarantino
+The Dark Knight Rises,2012,164,8.4,"1,615,621",Christopher Nolan
+3 Idiots,2009,170,8.4,"378,083",Rajkumar Hirani
+Taare Zameen Par,2007,165,8.4,"185,367","Directors:Aamir Khan, Amole Gupte"
+WALL·E,2008,98,8.4,"1,067,559",Andrew Stanton
+The Lives of Others,2006,137,8.4,"379,379",Florian Henckel von Donnersmarck
+Oldeuboi,2003,101,8.4,"554,140",Park Chan-wook
+Memento,2000,113,8.4,"1,192,556",Christopher Nolan
+Mononoke-hime,1997,134,8.4,"375,323",Hayao Miyazaki
+Raiders of the Lost Ark,1981,115,8.4,"933,417",Steven Spielberg
+The Shining,1980,146,8.4,"969,653",Stanley Kubrick
+Apocalypse Now,1979,147,8.4,"642,854",Francis Ford Coppola
+Alien,1979,117,8.4,"842,082",Ridley Scott
+Tengoku to jigoku,1963,143,8.4,"41,577",Akira Kurosawa
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,"475,060",Stanley Kubrick
+Witness for the Prosecution,1957,116,8.4,"120,110",Billy Wilder
+Paths of Glory,1957,88,8.4,"190,880",Stanley Kubrick
+Pather Panchali,1955,125,8.4,"30,456",Satyajit Ray
+Sunset Blvd.,1950,110,8.4,"215,100",Billy Wilder
+The Great Dictator,1940,125,8.4,"217,507",Charles Chaplin
+Chhichhore,2019,143,8.3,"47,550",Nitesh Tiwari
+Uri: The Surgical Strike,2019,138,8.3,"55,176",Aditya Dhar
+Tumbbad,2018,104,8.3,"39,757","Directors:Rahi Anil Barve, Anand Gandhi, Adesh Prasad"
+K.G.F: Chapter 1,2018,156,8.3,"54,515",Prashanth Neel
+Vikram Vedha,2017,147,8.3,"35,901","Directors:Gayatri, Pushkar"
+Drishyam,2013,160,8.3,"39,570",Jeethu Joseph
+Jagten,2012,115,8.3,"313,647",Thomas Vinterberg
+Jodaeiye Nader az Simin,2011,123,8.3,"238,130",Asghar Farhadi
+Incendies,2010,131,8.3,"168,727",Denis Villeneuve
